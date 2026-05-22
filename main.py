@@ -44,8 +44,8 @@ async def add_course(course: Course):
             "msg": "course added successfully",
             "data": new_course
         }
-    except Exception as e:
-        raise HTTPException(status_code=500) # FastAPI에서 raise는 서버를 중지하지 않고
+    except Exception:
+        raise HTTPException(status_code=500) # FastAPI에서 raise는 프로그램 종료나 서버를 중지하지 않고
                                             # 로직을 중단하고 클라이언트에게 에러 응답을 보내는 도구임.
 if __name__ == '__main__':
     import uvicorn
